@@ -1,0 +1,24 @@
+<div class="table-responsive">
+  <table class="table table-bordered" *ngIf="filteredEmployees && filteredEmployees.length">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Contact Preference</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of filteredEmployees; let i = index">
+        <td>{{ i+1 }}</td>
+        <td>{{ employee.fullName }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.phone }}</td>
+        <td>{{ employee.contactPreference }}</td>
+        <td><button class="btn btn-primary" (click)="editButtonClick(employee.id)">Edit</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

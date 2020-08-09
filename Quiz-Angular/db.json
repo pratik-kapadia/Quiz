@@ -1,0 +1,61 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "fullName": "Mark",
+      "contactPreference": "email",
+      "email": "mark@dell.com",
+      "phone": "5641238971",
+      "skills": [
+        {
+          "skillName": "C#",
+          "experienceInYears": 1,
+          "proficiency": "beginner"
+        },
+        {
+          "skillName": "Java",
+          "experienceInYears": 2,
+          "proficiency": "intermediate"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fullName": "John5",
+      "contactPreference": "phone",
+      "email": "john@dell.com",
+      "phone": "32421389712",
+      "skills": [
+        {
+          "skillName": "Angular1",
+          "experienceInYears": "21",
+          "proficiency": "beginner"
+        },
+        {
+          "skillName": "HTML1",
+          "experienceInYears": "21",
+          "proficiency": "intermediate"
+        },
+        {
+          "skillName": "LINQ1",
+          "experienceInYears": "31",
+          "proficiency": "advanced"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "fullName": "Pratik Ka",
+      "contactPreference": "email",
+      "email": "pratik@dell.com",
+      "phone": "343543535",
+      "skills": [
+        {
+          "skillName": "C#, .Net Core",
+          "experienceInYears": "8",
+          "proficiency": "intermediate"
+        }
+      ]
+    }
+  ]
+}

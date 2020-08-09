@@ -1,0 +1,44 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-header [showNavigationHeader]="showNavigationHeader"></app-header>
+<!-- <div class="container-fluid">
+  <div class="row"> -->
+
+    <!--SideNav-->
+    <!-- <div class="col-2" style="overflow-y: scroll; height: 980px" *ngIf="objectives && objectives.length && router.url.includes('/objective')">
+      <side-nav [objectives]="objectives"></side-nav>
+    </div> -->
+    <!-- <div class="col-2" style="overflow-y: scroll; height: 980px" *ngIf="objectives && objectives.length">
+      <div class="nav flex-column nav-pills">
+        <div class="card" *ngFor="let o of objectives; let i = index">
+          <div class="card-body">
+            <h6>
+              <div class="h-100 float-left">
+                {{ i + 1 }}.
+              </div>
+              <div class="pl-3">
+                <a class="text-dark text-decoration-none"
+                  [routerLink]="['/objective', o.id,  i + 1 ]">{{ o.description }}</a>
+              </div>
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!--SideNav-->
+    <!-- <div [ngClass]="(objectives && objectives.length)?'col-10':'col-12'">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="container-fluid" >
+  <div class="row">
+    <router-outlet></router-outlet>
+  </div>
+</div> -->
+
+
+
+    <router-outlet></router-outlet>
+
+

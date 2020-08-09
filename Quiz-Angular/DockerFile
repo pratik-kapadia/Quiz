@@ -1,0 +1,16 @@
+# FROM node:10-alpine
+# WORKDIR /app
+# COPY package.json .
+# RUN npm install
+# COPY . .
+# EXPOSE 4200 49153
+# CMD npm run start
+
+FROM node:latest as node
+WORKDIR /app
+COPY . .
+RUN npm install
+RUN npm run build --prod
+
+FROM nginx:alpine
+COPY --from=node /app/dist/ExampleApp /usr/share/nginx/html

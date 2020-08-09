@@ -1,0 +1,196 @@
+<div class="card">
+
+
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+
+    <h5 class="card-header">{{pageTitle}}</h5>
+
+
+    <div class="card-body">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input formControlName="fullName" type="text" class="form-control" id="fullName" aria-describedby="fullNameHelp"
+          for="fullName" placeholder="Enter Full Name" (blur)="logValidationErrors()"
+          [ngClass]="{'is-invalid': formErrors.fullName}">
+
+        <div *ngIf="formErrors.fullName" class="invalid-feedback">
+          {{ formErrors.fullName }}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="contactPreference">Contact Preference</label>
+        <div class="form-inline">
+          <div class="form-check form-check-inline">
+            <input type="radio" value="email" formControlName="contactPreference" class="form-check-input"
+              [ngClass]="{ 'is-invalid' : formErrors.contactPreference }">Email
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" value="phone" formControlName="contactPreference" class="form-check-input"
+              [ngClass]="{ 'is-invalid' : formErrors.contactPreference }">Phone
+          </div>
+        </div>
+
+      </div>
+      <div formGroupName="emailGroup">
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input formControlName="email" type="email" class="form-control" id="email" aria-describedby="emailHelp"
+            [ngClass]="{'is-invalid' : formErrors.email}" (blur)="logValidationErrors()" for="email"
+            placeholder="Enter email">
+          <div *ngIf="formErrors.email" class="invalid-feedback">
+            {{ formErrors.email }}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmEmail">Confirm Email</label>
+          <input formControlName="confirmEmail" type="email" class="form-control" id="confirmEmail"
+            aria-describedby="emailHelp" [ngClass]="{'is-invalid' : formErrors.confirmEmail || formErrors.emailGroup }"
+            (blur)="logValidationErrors()" for="confirmEmail" placeholder="Enter Confirm Email">
+          <div *ngIf="formErrors.confirmEmail || formErrors.emailGroup" class="invalid-feedback">
+            {{ formErrors.confirmEmail ? formErrors.confirmEmail : formErrors.emailGroup}}
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input formControlName="phone" type="text" class="form-control" id="phone" aria-describedby="phoneHelp"
+          [ngClass]="{'is-invalid' : formErrors.phone}" for="phone" (blur)="logValidationErrors()"
+          placeholder="Enter phone">
+        <div *ngIf="formErrors.phone" class="invalid-feedback">
+          Phone is required.
+        </div>
+      </div>
+
+
+      <div class="card card-body bg-light">
+        <div class="form-group col-sm-2">
+          <button type="button" class="btn btn-primary" (click)="addSkillButtonClick()"
+            [disabled]="employeeForm.get('skills').invalid">Add Skill</button>
+        </div>
+
+        <div formArrayName="skills" *ngFor="let skill of employeeForm.get('skills').controls; let i = index">
+          <hr *ngIf="i>0" />
+          <div [formGroupName]="i">
+            <div class="form-group">
+              <label class="col-sm-2" [attr.for]="'skillName' + i">Skill</label>
+              <div class="col-sm-4">
+                <input type="text" placeholder="C#, Java etc." [id]="'skillName' + i" formControlName="skillName"
+                  class="form-control" [ngClass]="{'is-invalid':skill.get('skillName').invalid
+                                        && skill.get('skillName').touched}" />
+                <div *ngIf="skill.get('skillName').invalid
+              && skill.get('skillName').touched" class="invalid-feedback">
+                  Skill Name is required.
+                </div>
+              </div>
+              <div class="col-sm-6" *ngIf="employeeForm.get('skills').length > 1">
+                <button type="button" class="btn btn-danger btn-sm float-right" title="Delete Skill"
+                  (click)="removeSkillButtonClick(i)">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+              </div>
+
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2" [attr.for]="'experienceInYears' + i">experience In Years</label>
+              <div class="col-sm-4">
+                <input [id]="'experienceInYears' + i" type="text" placeholder="In Years"
+                  formControlName="experienceInYears" [ngClass]="{'is-invalid': skill.get('experienceInYears').invalid
+                                          && skill.get('experienceInYears').touched}" class="form-control" />
+                <div *ngIf="skill.get('experienceInYears').invalid
+              && skill.get('experienceInYears').touched" class="invalid-feedback">
+                  Experience is required
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2" [attr.for]="'proficiency'+i" style="display: block;">Proficiency</label>
+              <!-- <div class="form-inline"> -->
+
+              <div class="col-sm-4">
+                <div class="form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" value="beginner" formControlName="proficiency">Begineer
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" value="intermediate" formControlName="proficiency">Intermediate
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" value="advanced" formControlName="proficiency">Advanced
+                  </label>
+                </div>
+                <div class="invalid-feedback"
+                  [ngClass]="{'is-invalid':skill.get('proficiency').invalid && skill.get('proficiency').touched}">
+                  Proficieny is required
+                </div>
+              </div>
+            </div>
+
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+      <!-- <div formGroupName="skills">
+      <div class="form-group">
+
+        <label for="skillName">Skill</label>
+        <div class="form-row">
+          <div class="col">
+            <input type="text" placeholder="C#, Java etc." id="skillName" formControlName="skillName" class="form-control"
+              (blur)="logValidationErrors()" [ngClass]="{'is-invalid':formErrors.skillName}" />
+            <div *ngIf="formErrors.skillName" class="invalid-feedback">
+              {{ formErrors.skillName }}
+            </div>
+          </div>
+          <div class="col">
+            <input type="text" placeholder="Experience in Years" formControlName="experienceInYears"
+              (blur)="logValidationErrors()" [ngClass]="{'is-invalid':formErrors.experienceInYears}"
+              class="form-control" />
+            <div *ngIf="formErrors.experienceInYears" class="invalid-feedback">
+              {{ formErrors.experienceInYears }}
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div class="form-group">
+        <label for="proficiency">Proficiency</label>
+        <div class="form-inline">
+          <div class="form-check form-check-inline" [ngClass]="{'is-invalid':formErrors.proficiency }">
+            <input [ngClass]="{'is-invalid' : formErrors.proficiency }" type="radio" value="beginner"
+              formControlName="proficiency" class="form-control" (blur)="logValidationErrors()">Begineer
+          </div>
+          <div class="form-check form-check-inline">
+            <input [ngClass]="{'is-invalid' : formErrors.proficiency }" type="radio" value="intermediate"
+              formControlName="proficiency" class=" form-control" (blur)="logValidationErrors()">Intermediate
+          </div>
+          <div class="form-check form-check-inline">
+            <input [ngClass]="{'is-invalid' : formErrors.proficiency }" type="radio" value="advanced"
+              formControlName="proficiency" class="form-control" (blur)="logValidationErrors()">Advanced
+          </div>
+          <div class="invalid-feedback">
+            {{ formErrors.proficiency }}
+          </div>
+        </div>
+
+      </div> -->
+      <!--</div>-->
+
+    </div>
+    <div class="card-footer">
+      <div class="form-inline">
+        <button type="submit" class="btn btn-primary mr-1" [disabled]="employeeForm.invalid">Submit</button>
+        <button type="button" class="btn btn-primary" (click)="onLoadDataClick()">Load Data</button>
+      </div>
+    </div>
+  </form>
+</div>

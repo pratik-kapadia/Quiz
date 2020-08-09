@@ -1,0 +1,67 @@
+<div class="container">
+
+
+<form [formGroup]="quizForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="title">Quiz Title</label>
+    <input type="text" formControlName="title" class="form-control" id="title" />
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea formControlName="description" class="form-control" id="description" rows="2"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="duration">Duration</label>
+    <input type="number" min="15" formControlName="duration" class="form-control" id="duration"/>
+  </div>
+
+  <div class="form-group">
+    <button
+      type="button"
+      class="btn btn-primary mr-1"
+      data-toggle="modal"
+      data-target="#questionsModal"
+    >
+      Select Questions
+    </button>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </div>
+</form>
+</div>
+
+<div class="modal" id="questionsModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Select Questions</h4>
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="list-group">
+          <ng-container *ngFor="let o of objectives; let i = index">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" [value]="o.id" id="objectives{{i}}" (click)="addQuestionToList($event,o)">
+              <label class="form-check-label" for="objectives{{i}}">{{ o.description }}
+              </label>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          Ok
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

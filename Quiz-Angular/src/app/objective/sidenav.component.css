@@ -1,0 +1,5 @@
+.status-bar{
+  border-left-color: orange !important;
+  border-left-width: 3px;
+  border-left:solid;
+}

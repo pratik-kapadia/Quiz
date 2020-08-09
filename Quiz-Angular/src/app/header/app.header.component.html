@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="showNavigationHeader">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="list">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="create">Create</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="panel">Panel</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="createquiz">Create Quiz</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="createobjective">Create Objective</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="allobjectives">All Objectives</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="dashboard">Dashboard</a>
+      </li>
+    </ul>
+    <!-- <form class="form-inline my-2 my-lg-0">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="startQuiz()">Start Quiz</button>
+    </form> -->
+  </div>
+</nav>
+
+<nav class="navbar navbar-light bg-dark justify-content-between" *ngIf="!showNavigationHeader">
+  <a class="navbar-brand text-white">Practice Test</a>
+  <form class="form-inline">
+    <span class="text-white">pratik.kapadia@siemens.com</span>
+    <!-- <button class="btn btn-outline-success my-2 ml-2 my-sm-0" type="submit" data-toggle="modal"
+      data-target="#myModal">End Test</button> -->
+      <button class="btn btn-outline-success my-2 ml-2 my-sm-0" type="submit" (click)="onSubmit()">End Test</button>
+  </form>
+</nav>
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Modal body..
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>

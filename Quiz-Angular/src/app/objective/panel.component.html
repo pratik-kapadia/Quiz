@@ -1,0 +1,98 @@
+<div class="container-fluid">
+  <div class="row">
+    <div
+      class="col-2"
+      style="overflow-y: scroll; height: 980px;"
+      *ngIf="objectives && objectives.length"
+    >
+      <side-nav
+        [objectives]="objectives"
+        (questionChange)="questionChange($event)"
+      ></side-nav>
+      <!-- <div class="nav flex-column nav-pills">
+        <div class="card" *ngFor="let o of objectives; let i = index">
+          <div class="card-body">
+            <h6>
+              <div class="h-100 float-left">
+                {{ i + 1 }}.
+              </div>
+              <div class="pl-3">
+                <a class="text-dark text-decoration-none"
+                  [routerLink]="['/objective', o.id,  i + 1 ]">{{ o.description }}</a>
+              </div>
+            </h6>
+          </div>
+        </div>
+      </div> -->
+      <!-- <ul class="nav flex-column nav-pills">
+        <li class="nav-item" *ngFor="let o of objectives">
+          <a class="nav-link"[routerLink]="['/objective',o.id]">{{ o.description }}</a>
+        </li>
+      </ul> -->
+
+      <!-- <div class="card" *ngFor="let o of objectives">
+        <div class="card-body">
+          <a [routerLink]="['/objective',o.id]">
+            {{ o.description }}
+          </a>
+        </div>
+      </div> -->
+    </div>
+
+    <div [ngClass]="objectives && objectives.length ? 'col-10' : 'col-12'">
+      <form
+        name="quizForm"
+        [formGroup]="objectiveForm"
+        *ngIf="objective"
+        (ngSubmit)="onSubmit()"
+      >
+        <div class="form-group pt-3">
+          <h6>Question {{ currentIndex }}</h6>
+          <hr />
+          <label>
+            {{ objective.description }}
+          </label>
+        </div>
+        <!-- <input type="hidden" formControlName="id" [ngModel]="id" /> -->
+        <div *ngFor="let o of objective.options; let i = index">
+          <div class="form-group border rounded p-2">
+            <div class="form-check">
+              <label class="form-check-label" [for]="'answer' + i">
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  id="answer"
+                  formControlName="selectedOption"
+                  [value]="o.id"
+                />
+                {{ o.value }}
+                <!-- <input type="radio" class="form-check-input" [checked]="o.isCorrect" formControlName="isCorrect" [id]="o.id">{{o.value}} -->
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!--
+        <ul class="list-group">
+          <ng-container *ngFor="let o of objectives">
+            <li class="list-group-item">{{ o.description }}</li>
+          </ng-container>
+        </ul> -->
+
+        <!-- <div class="list-group">
+          <ng-container *ngFor="let o of objectives">
+          <a href="#" class="list-group-item list-group-item-action">{{ o.description }}</a>
+        </ng-container>
+        </div> -->
+        <div class="d-flex justify-content-between">
+          <div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+          <div>
+            <button type="button" class="btn btn-primary" (click)="reset()">Reset Answer</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+
+<div class="container-fluid m-2" *ngIf="objectives && objectives.length">
+  <div class="row">
+    <div class="col-3" style="overflow-y: scroll; height: 980px">
+      <side-nav [objectives]="objectives" (questionChange)="questionChange($event)"></side-nav>
+    </div>
+     <div class="col-9">
+      <div [ngClass]="(objectives && objectives.length)?'col-10':'col-12'">
+      <question-options [testid]="testId" [objectiveForm]="objectiveForm" [objective]="objective" ></question-options>
+      </div>
+      <!--<div [ngClass]="(objectives && objectives.length)?'col-10':'col-12'">
+        <form [formGroup]="objectiveForm" *ngIf="objective && objective.options.length" (ngSubmit)="onSubmit()">
+
+          <div class="form-group pt-3">
+            <h6> Question {{ currentIndex }}</h6>
+            <hr>
+            <label>
+              {{ objective.description }}
+            </label>
+          </div>
+          <input type="hidden" formControlName="id" [ngModel]="objective.id">
+          <input type="hidden" formControlName="testid" [ngModel]="objective.testid">
+          <ng-container *ngFor="let o of objective.options">
+            <div class="form-group border rounded p-2">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" (change)="onChange(objective.id,o.id)" formControlName="selectedOption" [value]="o.id" name="selectedOption" class="form-check-input">{{o.value}}
+                </label>
+              </div>
+            </div>
+          </ng-container>
+          <div class="d-flex justify-content-between">
+            <div>
+              <button type="submit" class="btn btn-primary ">Submit</button>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-primary">Reset Answer</button>
+            </div>
+          </div>
+        </form>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+<div class="container" *ngIf="showTestLayout">
+  <div class="row">
+    <h2>{{ title }}</h2>
+  </div>
+  <div class="row">
+    <ng-container *ngFor="let t of testlist; let i = index">
+      <div class="card m-2" style="width: 13rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ t.title }}</h5>
+          <p class="card-text">{{ t.description}}</p>
+        </div>
+        <div class="card-footer text-center">
+          <div>
+            <div>Duration</div>
+            <div>{{ t.duration }}</div>
+          </div>
+          <!-- <a [routerLink]="['/objective', t.id]" class="btn btn-primary">Start Now</a> -->
+          <a class="btn btn-primary text-white" (click)="startNow(t.id)">Start Now</a>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

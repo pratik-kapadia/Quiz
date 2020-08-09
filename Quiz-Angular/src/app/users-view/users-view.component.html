@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="form-group">
+      <input type="text" class="form-control" id="searchUser" aria-describedby="emailHelp"
+        placeholder="Search User" (input)="searchUser($event.target.value)">
+    </div>
+  </div>
+  <div class="row">
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>Age</th>
+          <th>Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let u of filteredUsers; let i = index">
+          <td>{{ i }}</td>
+          <td>{{u.firstName}}</td>
+          <td>{{u.lastName}}</td>
+          <td>{{u.age}}</td>
+          <td>{{u.contact}}</td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="nav flex-column nav-pills">
+  <div class="card" *ngFor="let o of objectives; let i = index">
+
+    <div class="card-body" style="cursor: pointer;" [class.status-bar]="isSubmitted" (click)="showOptions(o.id)">
+      <h6>
+        <div class="h-100 float-left">
+          {{ i + 1 }}.
+        </div>
+        <div class="pl-3">
+          <!-- <a class="text-dark text-decoration-none"
+                [routerLink]="['/objective', o.id,  i + 1 ]">{{ o.description }}</a> -->
+          <a class="text-dark text-decoration-none">{{ o.description }}</a>
+        </div>
+      </h6>
+    </div>
+
+
+    <!-- <ul class="nav flex-column nav-pills">
+      <li class="nav-item" *ngFor="let o of objectives">
+        <a class="nav-link"[routerLink]="['/objective',o.id]">{{ o.description }}</a>
+      </li>
+    </ul> -->
+
+    <!-- <div class="card" *ngFor="let o of objectives">
+      <div class="card-body">
+        <a [routerLink]="['/objective',o.id]">
+          {{ o.description }}
+        </a>
+      </div>
+    </div> -->
+  </div>
+</div>

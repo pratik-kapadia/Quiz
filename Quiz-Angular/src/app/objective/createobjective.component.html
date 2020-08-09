@@ -1,0 +1,75 @@
+<div class="container">
+  <form [formGroup]="objectiveForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="question">Question</label>
+      <textarea
+        formControlName="question"
+        class="form-control"
+        id="question"
+        rows="3"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="answer">Answers</label>
+    </div>
+    <div class="card card-body bg-light">
+      <div class="form-group col-sm-2">
+        <button type="button" class="btn btn-primary" (click)="addAnswers()">
+          Add Possible Answers
+        </button>
+      </div>
+
+      <div
+        formArrayName="options"
+        *ngFor="
+          let option of objectiveForm.get('options').controls;
+          let i = index
+        "
+      >
+        <div [formGroupName]="i">
+          <input type="hidden" formControlName="id" [ngModel]="i + 1" />
+          <div class="row">
+            <div class="col-11 m-0 pr-0">
+              <textarea
+                class="form-control"
+                [id]="'option' + i"
+                formControlName="value"
+                rows="2"
+              ></textarea>
+            </div>
+            <div class="col-1 pull-left">
+              <button
+                type="button"
+                class="btn btn-danger btn-sm pull-left"
+                (click)="deleteAnswer(i)"
+              >
+                <i class="fa fa-times fa-1" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            <!-- <button type="button" class="btn btn-danger btn-sm float-right" title="Delete Skill"
+                  (click)="removeSkillButtonClick(i)">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </button> -->
+          </div>
+          <div class="form-group form-check">
+            <label class="form-check-label" [for]="'correctOption' + i">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                [id]="'correctOption' + i"
+                formControlName="isCorrect"
+              />Mark as a correct</label
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group mt-5">
+      <button type="submit" class="form-control" class="btn btn-primary">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

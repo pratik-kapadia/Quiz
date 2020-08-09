@@ -1,0 +1,26 @@
+[
+		{
+			"id":1,
+			"title":"AspNet Core",
+			"description":"Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"duration":"00:10:20"
+		},
+		{
+			"id":2,
+			"title":"AspNet Core",
+			"description":"Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"duration":"00:10:25"
+		},
+		{
+			"id":3,
+			"title":"AspNet Core",
+			"description":"Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"duration":"00:10:30"
+		},
+		{
+			"id":4,
+			"title":"AspNet Core",
+			"description":"Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"duration":"00:12:00"
+		}
+	]

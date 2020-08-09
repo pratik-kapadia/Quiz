@@ -1,0 +1,73 @@
+{
+  "objectives": [
+    {
+      "id": 1,
+      "description": "In OOP, which of the following is not a type of constructor",
+      "selected_option": "",
+      "options": [
+        {
+          "id": "1",
+          "value": "Copy"
+        },
+        {
+          "id": "2",
+          "value": "Friend"
+        },
+        {
+          "id": "3",
+          "value": "Default"
+        },
+        {
+          "id": "4",
+          "value": "Parameterized"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "description": "In OOP, which of the following concepts allows a class object to be used inside another class?",
+      "selected_option": "",
+      "options": [
+        {
+          "id": "1",
+          "value": "Encapsulation"
+        },
+        {
+          "id": "2",
+          "value": "Abstraction"
+        },
+        {
+          "id": "3",
+          "value": "Composition"
+        },
+        {
+          "id": "4",
+          "value": "Inheritance"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "description": "In OOP, which of the following functions is given the same access as methods to private and protected data of a class?",
+      "selected_option": "",
+      "options": [
+        {
+          "id": "1",
+          "value": "Static"
+        },
+        {
+          "id": "2",
+          "value": "Friend"
+        },
+        {
+          "id": "3",
+          "value": "Const"
+        },
+        {
+          "id": "4",
+          "value": "Virtual"
+        }
+      ]
+    }
+  ]
+}

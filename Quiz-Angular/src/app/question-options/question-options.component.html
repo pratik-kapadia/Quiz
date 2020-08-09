@@ -1,0 +1,53 @@
+<form
+  [formGroup]="objectiveForm"
+  *ngIf="objective && objective.options.length"
+  (ngSubmit)="onSubmit()"
+>
+  <div class="form-group pt-3">
+    <h6>Question {{ currentIndex }}</h6>
+    <hr />
+    <label>
+      {{ objective.description }}
+    </label>
+  </div>
+  <input type="hidden" formControlName="id" [ngModel]="objective.id" />
+  <input type="hidden" formControlName="testid" [ngModel]="objective.testid" />
+  <ng-container *ngFor="let o of objective.options">
+    <div
+      class="form-group border rounded p-2"
+      [class.bg-success]="correctAnswer === o.id && isShowAnswer"
+    >
+      <div class="form-check">
+        <label class="form-check-label">
+          <input
+            type="radio"
+            (change)="onChange(objective.id, o.id)"
+            formControlName="selectedOption"
+            [value]="o.id"
+            name="selectedOption"
+            class="form-check-input"
+          />{{ o.value }}
+        </label>
+      </div>
+    </div>
+  </ng-container>
+  <div class="d-flex justify-content-between">
+    <div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary" (click)="showAnswer()">
+        Show Answer
+      </button>
+    </div>
+    <div>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="onResetAnswer(objective)"
+      >
+        Reset Answer
+      </button>
+    </div>
+  </div>
+</form>

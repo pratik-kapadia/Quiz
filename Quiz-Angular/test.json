@@ -1,0 +1,420 @@
+{
+  "objectives": [
+    {
+      "id": 1,
+      "testid": 1,
+      "description": "In OOP, which of the following is not a type of constructor",
+      "options": [
+        {
+          "id": 1,
+          "value": "Copy",
+          "isCorrect": false
+        },
+        {
+          "id": 2,
+          "value": "Friend",
+          "isCorrect": true
+        },
+        {
+          "id": 3,
+          "value": "Default",
+          "isCorrect": null
+        },
+        {
+          "id": 4,
+          "value": "Parameterized",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "description": "In OOP, which of the following concepts allows a class object to be used inside another class?",
+      "testid": 1,
+      "options": [
+        {
+          "id": "1",
+          "value": "Encapsulation",
+          "isCorrect": true
+        },
+        {
+          "id": "2",
+          "value": "Abstraction",
+          "isCorrect": false
+        },
+        {
+          "id": "3",
+          "value": "Composition",
+          "isCorrect": false
+        },
+        {
+          "id": "4",
+          "value": "Inheritance",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "description": "In OOP, which of the following functions is given the same access as methods to private and protected data of a class?",
+      "testid": 1,
+      "options": [
+        {
+          "id": 1,
+          "value": "Static",
+          "isCorrect": false
+        },
+        {
+          "id": 2,
+          "value": "Friend",
+          "isCorrect": null
+        },
+        {
+          "id": 3,
+          "value": "Const",
+          "isCorrect": null
+        },
+        {
+          "id": 4,
+          "value": "Virtual",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "description": "Which of the following is not the member of\nclass?",
+      "testid": 1,
+      "options": [
+        {
+          "id": 1,
+          "value": "Static function",
+          "isCorrect": false
+        },
+        {
+          "id": 2,
+          "value": "Friend function",
+          "isCorrect": true
+        },
+        {
+          "id": 3,
+          "value": "Const function",
+          "isCorrect": false
+        },
+        {
+          "id": 4,
+          "value": "Virtual function",
+          "isCorrect": false
+        }
+      ],
+      "selectedOption": ""
+    },
+    {
+      "id": 5,
+      "description": "Which of the following concepts means determining at runtime what method to invoke?",
+      "testid": 1,
+      "options": [
+        {
+          "id": 1,
+          "value": "Data hiding",
+          "isCorrect": false
+        },
+        {
+          "id": 2,
+          "value": "Dynamic Typing",
+          "isCorrect": false
+        },
+        {
+          "id": 3,
+          "value": "Dynamic binding",
+          "isCorrect": true
+        },
+        {
+          "id": 4,
+          "value": "Dynamic loading",
+          "isCorrect": false
+        }
+      ],
+      "selectedOption": ""
+    },
+    {
+      "id": 6,
+      "description": "The friend functions are used in situations where:",
+      "testid": 2,
+      "options": [
+        {
+          "id": 1,
+          "value": "We want to have access to unrelated classes",
+          "isCorrect": false
+        },
+        {
+          "id": 2,
+          "value": "Dynamic binding is required",
+          "isCorrect": false
+        },
+        {
+          "id": 3,
+          "value": "Exchange of data between classes to take place",
+          "isCorrect": false
+        },
+        {
+          "id": 4,
+          "value": "None of the above",
+          "isCorrect": true
+        }
+      ],
+      "selectedOption": ""
+    },
+    {
+      "id": 7,
+      "description": "The term __________ means the ability to take many forms.",
+      "testid": 2,
+      "options": [
+        {
+          "id": 1,
+          "value": "Inheritance",
+          "isCorrect": false
+        },
+        {
+          "id": 2,
+          "value": "Polymorphism",
+          "isCorrect": true
+        },
+        {
+          "id": 3,
+          "value": "Member function",
+          "isCorrect": false
+        },
+        {
+          "id": 4,
+          "value": "Encapsulation",
+          "isCorrect": false
+        }
+      ],
+      "selectedOption": ""
+    },
+    {
+      "id": 8,
+      "description": "Which of the following concept of oops allows compiler to insert arguments in a function call if it is not specified?",
+      "testid": 2,
+      "options": [
+        {
+          "id": 1,
+          "value": "Call by value",
+          "isCorrect": false
+        },
+        {
+          "id": 2,
+          "value": "Call by reference",
+          "isCorrect": false
+        },
+        {
+          "id": 3,
+          "value": "Default arguments",
+          "isCorrect": true
+        },
+        {
+          "id": 4,
+          "value": "Call by pointer",
+          "isCorrect": false
+        }
+      ],
+      "selectedOption": ""
+    },
+    {
+      "id": 9,
+      "description": "How many instances of an abstract class can be created?",
+      "testid": 2,
+      "options": [
+        {
+          "id": 1,
+          "value": "1",
+          "isCorrect": false
+        },
+        {
+          "id": 2,
+          "value": "5",
+          "isCorrect": false
+        },
+        {
+          "id": 3,
+          "value": "13",
+          "isCorrect": false
+        },
+        {
+          "id": 4,
+          "value": "0",
+          "isCorrect": true
+        }
+      ],
+      "selectedOption": ""
+    },
+    {
+      "id": 10,
+      "description": "Which of the following concepts of OOPS means exposing only necessary information to client?",
+      "testid": 2,
+      "options": [
+        {
+          "id": 1,
+          "value": "Encapsulation",
+          "isCorrect": false
+        },
+        {
+          "id": 2,
+          "value": "Abstraction",
+          "isCorrect": false
+        },
+        {
+          "id": 3,
+          "value": "Data hiding",
+          "isCorrect": true
+        },
+        {
+          "id": 4,
+          "value": "Data binding",
+          "isCorrect": false
+        }
+      ],
+      "selectedOption": ""
+    },
+    {
+      "id": 11,
+      "description": "Ability of an operator or function call to take different forms is known as ____.\n",
+      "testid": 2,
+      "options": [
+        {
+          "id": 1,
+          "value": "Polymorphism",
+          "isCorrect": true
+        },
+        {
+          "id": 2,
+          "value": "Encapsulation",
+          "isCorrect": false
+        },
+        {
+          "id": 3,
+          "value": "Overloading",
+          "isCorrect": false
+        },
+        {
+          "id": 4,
+          "value": "Inheritance",
+          "isCorrect": false
+        }
+      ],
+      "selectedOption": ""
+    },
+    {
+      "id": 12,
+      "description": "Which of the following is correct about class and structure?\n",
+      "testid": 2,
+      "options": [
+        {
+          "id": 1,
+          "value": "class can have member functions while structure cannot.",
+          "isCorrect": false
+        },
+        {
+          "id": 2,
+          "value": "class data members are public by default while that of structure are private.",
+          "isCorrect": false
+        },
+        {
+          "id": 3,
+          "value": "Pointer to structure or classes cannot be declared.",
+          "isCorrect": false
+        },
+        {
+          "id": 4,
+          "value": "class data members are private by default while that of structure are public by default.",
+          "isCorrect": true
+        }
+      ],
+      "selectedOption": ""
+    },
+    {
+      "id": 13,
+      "description": "Inheritance is ………..in nature.",
+      "testid": 3,
+      "options": [
+        {
+          "id": 1,
+          "value": "Intransitive",
+          "isCorrect": false
+        },
+        {
+          "id": 2,
+          "value": "Transitive",
+          "isCorrect": true
+        },
+        {
+          "id": 3,
+          "value": "Both",
+          "isCorrect": false
+        },
+        {
+          "id": 4,
+          "value": "None of the above\n",
+          "isCorrect": false
+        }
+      ],
+      "selectedOption": ""
+    },
+    {
+      "id": 14,
+      "description": "dsdfds",
+      "testid": 3,
+      "options": [
+        {
+          "id": 1,
+          "value": "sdfs",
+          "isCorrect": true
+        },
+        {
+          "id": 2,
+          "value": "dsfds",
+          "isCorrect": true
+        },
+        {
+          "id": 3,
+          "value": "sdfdsf",
+          "isCorrect": false
+        },
+        {
+          "id": 4,
+          "value": "sfsd",
+          "isCorrect": false
+        }
+      ],
+      "selectedOption": ""
+    },
+    {
+      "id": 15,
+      "description": "dsdsd",
+      "options": [
+        {
+          "id": 1,
+          "value": "sfsd",
+          "isCorrect": false
+        },
+        {
+          "id": 2,
+          "value": "sdf",
+          "isCorrect": true
+        },
+        {
+          "id": 3,
+          "value": "sf",
+          "isCorrect": false
+        },
+        {
+          "id": 4,
+          "value": "",
+          "isCorrect": false
+        }
+      ],
+      "selectedOption": ""
+    }
+  ]
+}
